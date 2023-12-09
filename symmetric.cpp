@@ -8,13 +8,27 @@ string summ(string inp_znach1, string inp_znach2, int base){
     int pointer1, pointer2, pointer_drob1, pointer_drob2, carry;
     string znach1, znach2, drob1, drob2, new_znach, new_drob;
     
+    string alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    for (int i=0; i<inp_znach1.size(); i++){
+        if ((inp_znach1[i] != '.') and (alphabet.find(inp_znach1[i]) >= base)){
+            cout << "ERROR INPUT VALUE IN FIRST DIGIT" << endl;
+            return "";
+        }
+    }
+
+    for (int i=0; i<inp_znach2.size(); i++){
+        if ((inp_znach2[i] != '.') and (alphabet.find(inp_znach2[i]) >= base)){
+            cout << "ERROR INPUT VALUE IN SECOND DIGIT" << endl;
+            return "";
+        }
+    }
+
     znach1 = inp_znach1.substr(0, inp_znach1.find('.'));
     znach2 = inp_znach2.substr(0, inp_znach2.find('.'));
     
     drob1 = inp_znach1.substr(inp_znach1.find('.') + 1, inp_znach1.size() - znach1.size());
     drob2 = inp_znach2.substr(inp_znach2.find('.') + 1, inp_znach2.size() - znach2.size());
-
-    string alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     // Указатели на конец числа
     pointer1 = znach1.size() - 1;

@@ -186,8 +186,6 @@ double symmetric_to_double(string symmetric_num){
 
     for (int i=0; i<znach.size(); i++){
         if (znach[i] == '+'){
-            // cout<<i<<" "<<znach[i]<<endl;
-            // cout<<"3^"<<znach.size()-i+1<<"="<<pow(3, znach.size()-i+1)<<endl;
             res = res + pow(3, znach.size()-i-1);
         }
         if (znach[i] == '-'){

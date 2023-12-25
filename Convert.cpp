@@ -57,6 +57,10 @@ string iz_10_v_P(double inp_znach, int new_base, int accurancy=9){
         lencount += 1;
     }
 
+    if (new_znach == ""){
+        new_znach = "0";
+    }
+
     if (new_drob == ""){
         new_drob = "0";
     }

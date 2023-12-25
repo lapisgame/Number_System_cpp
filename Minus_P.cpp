@@ -57,7 +57,7 @@ string minuss(string inp_znach1, string inp_znach2, int base){
     pointer2 = znach2.size() - 1;
 
 
-    // Незначащие нули в конце числа для одинакового кол-ва разрядов
+    // Незначащие нули в начале числа для одинакового кол-ва разрядов
     if (znach1.size() > znach2.size()){
         znach2 = string(znach1.size() - znach2.size(), '0') + znach2;
     }

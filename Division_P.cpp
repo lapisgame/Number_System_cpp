@@ -161,6 +161,12 @@ string minuss(string inp_znach1, string inp_znach2, int base){
         }
     }
 
+    if (inp_znach1.find('.') < inp_znach2.find('.')){
+        string temp = inp_znach1;
+        inp_znach1 = inp_znach2;
+        inp_znach2 = temp;
+    }
+
     znach1 = inp_znach1.substr(0, inp_znach1.find('.'));
     znach2 = inp_znach2.substr(0, inp_znach2.find('.'));
     
@@ -283,6 +289,12 @@ string delenie(string inp_znach1, string inp_znach2, int base){
             cout << "ERROR INPUT VALUE IN SECOND DIGIT" << endl;
             return "";
         }
+    }
+
+    if (inp_znach1.find('.') < inp_znach2.find('.')){
+        string temp = inp_znach1;
+        inp_znach1 = inp_znach2;
+        inp_znach2 = temp;
     }
 
     new_znach = "";

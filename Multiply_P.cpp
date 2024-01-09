@@ -104,7 +104,7 @@ string umnogenie(string inp_znach1, string inp_znach2, int base){
 }
 
 int main(){
-    cout << umnogenie("112.356", "13.35", 8) << endl;
+    cout << umnogenie("11", "A", 11) << endl;
 
     return 0;
 }

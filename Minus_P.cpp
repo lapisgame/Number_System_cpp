@@ -153,7 +153,7 @@ string minuss(string inp_znach1, string inp_znach2, int base){
 
 
 int main(){
-    cout << minuss("112.356", "13.35", 8) << endl;
+    cout << minuss("42", "36", 8) << endl;
 
     return 0;
 }

@@ -314,7 +314,7 @@ string delenie(string inp_znach1, string inp_znach2, int base){
     }
 
     while (count_znach>0){
-        new_znach = alphabet[count_znach % base];
+        new_znach = alphabet[count_znach % base] + new_znach;
         count_znach = count_znach / base;
     }
 
@@ -329,7 +329,7 @@ string delenie(string inp_znach1, string inp_znach2, int base){
 }
 
 int main(){
-    cout << delenie("112.356", "13.35", 8) << endl;
+    cout << delenie("2.3", "10", 5) << endl;
 
     return 0;
 }

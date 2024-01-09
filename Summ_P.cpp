@@ -23,6 +23,12 @@ string summ(string inp_znach1, string inp_znach2, int base){
         }
     }
 
+    if (inp_znach1.find('.') < inp_znach2.find('.')){
+        string temp = inp_znach1;
+        inp_znach1 = inp_znach2;
+        inp_znach2 = temp;
+    }
+
     znach1 = inp_znach1.substr(0, inp_znach1.find('.'));
     znach2 = inp_znach2.substr(0, inp_znach2.find('.'));
     
@@ -66,7 +72,6 @@ string summ(string inp_znach1, string inp_znach2, int base){
     // Бежим с конца в перед пока не закончится меньшее число, 
     // в процессе складываем значения и пишем их по модулю
     new_znach = "";
-    carry = 0;
     while (pointer2 >= 0){
         int summ = alphabet.find(znach1[pointer1]) + alphabet.find(znach2[pointer2]) + carry;
         char addition_bit = alphabet[summ % base];
@@ -112,7 +117,7 @@ string summ(string inp_znach1, string inp_znach2, int base){
 
 
 int main(){
-    cout << summ("112.356", "13.35", 6) << endl;
+    cout << summ("1.3", "13.35", 6) << endl;
 
     return 0;
 }

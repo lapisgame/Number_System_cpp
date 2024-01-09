@@ -161,12 +161,6 @@ string minuss(string inp_znach1, string inp_znach2, int base){
         }
     }
 
-    if (inp_znach1.find('.') < inp_znach2.find('.')){
-        string temp = inp_znach1;
-        inp_znach1 = inp_znach2;
-        inp_znach2 = temp;
-    }
-
     znach1 = inp_znach1.substr(0, inp_znach1.find('.'));
     znach2 = inp_znach2.substr(0, inp_znach2.find('.'));
     
@@ -266,11 +260,6 @@ string minuss(string inp_znach1, string inp_znach2, int base){
     return new_znach + "." + new_drob;
 }
 
-void split(string all, string &znach, string &drob){
-    znach = all.substr(0, all.find('.'));
-    drob = all.substr(all.find('.') + 1, all.size() - znach.size());
-}
-
 string delenie(string inp_znach1, string inp_znach2, int base){
     int pointer1, pointer2, pointer_drob1, pointer_drob2, carry, borrow;
     string znach1, znach2, drob1, drob2, new_znach, new_drob;
@@ -289,12 +278,6 @@ string delenie(string inp_znach1, string inp_znach2, int base){
             cout << "ERROR INPUT VALUE IN SECOND DIGIT" << endl;
             return "";
         }
-    }
-
-    if (inp_znach1.find('.') < inp_znach2.find('.')){
-        string temp = inp_znach1;
-        inp_znach1 = inp_znach2;
-        inp_znach2 = temp;
     }
 
     new_znach = "";
@@ -341,7 +324,7 @@ string delenie(string inp_znach1, string inp_znach2, int base){
 }
 
 int main(){
-    cout << delenie("2.3", "10", 5) << endl;
+    cout << delenie("12", "10", 10) << endl;
 
     return 0;
 }

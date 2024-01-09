@@ -20,8 +20,9 @@ string LremoveZero(string str)
 { 
     if (str.size()>1){
         int i = 0; 
-        while (str[i] == '0') 
-            i++; 
+        while (str[i] == '0' and str[i+1] != '.'){ 
+            i++;
+        }
 
         str.erase(0, i); 
     }
@@ -94,16 +95,24 @@ string umnogenie(string inp_znach1, string inp_znach2, int base){
         new_znach = alphabet[result_digit] + new_znach;
     }
 
-    new_znach = LremoveZero(new_znach);
-
     new_znach = new_znach.substr(0,new_znach.size() - shift_dot) + "." + new_znach.substr(new_znach.size() - shift_dot, new_znach.size());
-
+    
+    new_znach = LremoveZero(new_znach);
     new_znach = RremoveZero(new_znach);
+
+    if (new_znach[0] == '.'){
+        new_znach = '0' + new_znach;
+    }
+
+    if (new_znach[new_znach.size() - 1] == '.'){
+        new_znach = new_znach + '0';
+    }
 
     return new_znach;
 }
 
 int main(){
+
     cout << umnogenie("11", "A", 11) << endl;
 
     return 0;

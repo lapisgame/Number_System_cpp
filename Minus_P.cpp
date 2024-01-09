@@ -17,7 +17,7 @@ string RremoveZero(string str)
 string LremoveZero(string str) 
 { 
     int i = 0; 
-    while (str[i] == '0') 
+    while (str[i] == '0' and str[i+1] != '.') 
         i++; 
 
     str.erase(0, i); 
@@ -43,12 +43,6 @@ string minuss(string inp_znach1, string inp_znach2, int base){
             cout << "ERROR INPUT VALUE IN SECOND DIGIT" << endl;
             return "";
         }
-    }
-
-    if (inp_znach1.find('.') < inp_znach2.find('.')){
-        string temp = inp_znach1;
-        inp_znach1 = inp_znach2;
-        inp_znach2 = temp;
     }
 
     znach1 = inp_znach1.substr(0, inp_znach1.find('.'));
